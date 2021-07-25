@@ -50,7 +50,9 @@
                                     {{$product->name}}
                                 </a>
                                 </h3>
-                                <p>{{$product->short_description}}</p>
+                    <h4>Price : ${{$product->price}}</h4>
+                    <button class="btn btn-info">Add To Cart</button>
+
                             </div>
                         </div>
                     </div>

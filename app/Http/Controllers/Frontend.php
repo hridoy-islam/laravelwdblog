@@ -24,7 +24,7 @@ class Frontend extends Controller
     }
     public function shop(){
 
-        $data = Product::select('name', 'slug', 'short_description', 'thumbnail')->simplePaginate(10);
+        $data = Product::select('name', 'slug', 'short_description', 'price', 'thumbnail')->simplePaginate(10);
         return view('frontend.shop.index', compact('data'));
     }
 
