@@ -25,11 +25,8 @@ Route::get('/', function () {
 });
 
 Route::prefix('admin')->group(function () {
-
     Route::get('/', [AuthController::class, 'index'])->name('login');
-
     Route::get('/register', [AuthController::class, 'registerview']);
-
     Route::get('/forgot', [AuthController::class, 'forgotview']);
 });
 
@@ -44,6 +41,3 @@ Route::prefix('dashboard')->group(function () {
     Route::resource('brand', BrandController::class);
 
 });
-
-
-

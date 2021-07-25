@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>@yield('title')</title>
 
+
+  @notifyCss
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
@@ -248,6 +250,7 @@
           <!-- /.col -->
         </div> --}}
         <!-- /.row -->
+        <x:notify-messages />
         @yield('content')
       </div><!--/. container-fluid -->
     </section>
@@ -291,5 +294,6 @@
 <script src="{{asset('dist/js/demo.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>
+@notifyJs
 </body>
 </html>
