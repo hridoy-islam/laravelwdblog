@@ -28,6 +28,8 @@ class ProductFactory extends Factory
         return [
             'name' => $name,
             'slug' => $slug,
+            'price' => $this->faker->numberBetween(0, 30),
+            'stock' => $this->faker->numberBetween(20, 50),
             'short_description' => $this->faker->paragraph(),
             'long_description' => $this->faker->paragraph(2),
             'category_id' => $this->faker->numberBetween(1, 20),

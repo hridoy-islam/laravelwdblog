@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Frontend;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 
@@ -21,8 +22,21 @@ use App\Http\Controllers\ProductController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('frontend.index');
+})->name('home');
+
+Route::get('/blog', [Frontend::class, 'index'])->name('blog');
+Route::get('/blog/{slug}', [Frontend::class, 'single'])->name('singlepost');
+
+Route::get('/about', [Frontend::class, 'about'])->name('about');
+Route::get('/shop', [Frontend::class, 'shop'])->name('shop');
+Route::get('/shop/{productname}', [Frontend::class, 'singleProduct'])->name('singleproduct');
+Route::get('/cart', [Frontend::class, 'cart'])->name('cart');
+Route::get('/checkout', [Frontend::class, 'checkout'])->name('checkout');
+Route::get('/contact', [Frontend::class, 'contact'])->name('contact');
+
+Route::get('/login', [Frontend::class, 'showlogin'])->name('customerlogin');
+
 
 Route::prefix('admin')->group(function () {
     Route::get('/', [AuthController::class, 'index'])->name('login');
