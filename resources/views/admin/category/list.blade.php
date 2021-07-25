@@ -34,7 +34,13 @@
                                     <td>  <a class="btn btn-primary btn-xs" href="{{route('category.edit', $row->id)}}">Edit</a>
 
                                     </td>
-                                    <td><a href="" class="btn btn-danger btn-xs">Delete</a></td>
+<td>
+<a
+href="{{route('category.destroy', $row->id)}}"
+class="btn btn-danger btn-xs">
+Delete
+</a>
+</td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -51,3 +57,4 @@
     </div><!-- /.container-fluid -->
 </section>
 @endsection
+

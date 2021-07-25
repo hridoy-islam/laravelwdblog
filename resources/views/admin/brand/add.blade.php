@@ -15,11 +15,12 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form>
+            <form method="post" action="{{route('brand.store')}}">
+                @csrf
               <div class="card-body">
                 <div class="form-group">
                   <label for="name">Brand's Name</label>
-                  <input type="text" class="form-control" id="name" placeholder="Author Name">
+                  <input type="text" class="form-control" name="name" id="name" placeholder="Author Name">
                 </div>
 
               <div class="card-footer">
@@ -31,6 +32,16 @@
 
         </div>
         <!--/.col (left) -->
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
       </div>
       <!-- /.row -->

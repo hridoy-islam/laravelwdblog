@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Kernel;
 use App\Models\Category;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -37,7 +38,15 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-
+        $validated = $request->validate([
+            'category_name' => 'required|unique:categories',
+        ]);
+        $category = new Category;
+        $category->category_name = $request->category_name;
+        $category->category_slug = Str::slug($request->category_name);
+        $category->save();
+        emotify('success', 'You are awesome, Category was successfully created');
+        return redirect()->route('category.index');
     }
 
     /**
@@ -83,6 +92,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
 }

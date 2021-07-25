@@ -37,7 +37,18 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|unique:users',
+            'email' => 'required|unique:users|email',
+            'phone' => 'required',
+        ]);
+        $author = new User;
+        $author->name = $request->name;
+        $author->email = $request->email;
+        $author->phone = $request->phone;
+        $author->save();
+        smilify('success', 'You are awesome, Author was successfully created');
+        return redirect()->route('author.index');
     }
 
     /**

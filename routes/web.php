@@ -30,14 +30,12 @@ Route::prefix('admin')->group(function () {
     Route::get('/forgot', [AuthController::class, 'forgotview']);
 });
 
+Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function(){
 
-
-Route::prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('category', CategoryController::class);
     Route::resource('author', AuthorController::class);
     Route::resource('post', PostController::class);
     Route::resource('product', ProductController::class);
     Route::resource('brand', BrandController::class);
-
 });

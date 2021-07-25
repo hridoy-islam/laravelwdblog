@@ -36,7 +36,14 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|unique:brands',
+        ]);
+        $brand = new Brand;
+        $brand->name = $request->name;
+        $brand->save();
+        drakify('success', 'You are awesome, Brand was successfully created');
+        return redirect()->route('brand.index');
     }
 
     /**

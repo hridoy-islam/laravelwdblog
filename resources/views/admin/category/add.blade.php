@@ -15,11 +15,12 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form>
+            <form method="post" action="{{ route('category.store')}}">
+                @csrf
               <div class="card-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Category Name</label>
-                  <input type="text" class="form-control" id="categoryname" placeholder="Category Name">
+                  <label for="categoryname">Category Name</label>
+                  <input type="text" class="form-control" id="categoryname" name="category_name" placeholder="Category Name" value={{old('category_name')}}>
                 </div>
 
               <div class="card-footer">
@@ -28,6 +29,16 @@
             </form>
           </div>
           <!-- /.card -->
+
+          @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
         </div>
         <!--/.col (left) -->
