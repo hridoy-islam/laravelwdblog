@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -23,7 +24,8 @@ class Frontend extends Controller
         $data = Post::with('user')->where('slug', $slug)->first();
         $this->seo()->setTitle($data['title']);
         $this->seo()->setDescription($data['short_description']);
-        return view('frontend.blog.single', compact('data'));
+        $cat = Category::all();
+        return view('frontend.blog.single', compact('data', 'cat'));
     }
 
     public function about(){
@@ -64,6 +66,20 @@ class Frontend extends Controller
 
     public function showlogin(){
         return view('frontend.pages.login');
+    }
+
+    public function searchblog(Request $request){
+        $query =  $request->query('query');
+        $data = Post::where('title', 'LIKE', '%'.$query.'%')->get();
+        return view('frontend.blog.search', compact('data'));
+    }
+
+    public function bycategory($slug){
+
+        $category = Category::where('category_slug', $slug)->select('id')->get();
+        //$data = Post::where('category_id', 2)->get();
+
+        return $category['id'];
     }
 
 }

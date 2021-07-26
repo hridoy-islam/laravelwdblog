@@ -27,6 +27,8 @@ Route::get('/', function () {
 
 Route::get('/blog', [Frontend::class, 'index'])->name('blog');
 Route::get('/blog/{slug}', [Frontend::class, 'single'])->name('singlepost');
+Route::get('/searchblog', [Frontend::class, 'searchblog'])->name('search.blog');
+Route::get('/category/{slug}', [Frontend::class, 'bycategory'])->name('category.slug');
 
 Route::get('/about', [Frontend::class, 'about'])->name('about');
 Route::get('/shop', [Frontend::class, 'shop'])->name('shop');

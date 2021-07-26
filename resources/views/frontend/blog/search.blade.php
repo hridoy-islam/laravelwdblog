@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 text-center">
-                <h2>Blog Page</h2>
+                <h2>Search Page</h2>
                 <ol class="breadcrumb">
                     <li>
                         <a href="./">
@@ -18,23 +18,6 @@
                     </li>
                     <li class="active">Mosaic</li>
                 </ol>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="ls section_padding_top_40 section_padding_bottom_40">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-12 text-center">
-
-                <form action="{{route('search.blog')}}" >
-
-                    <input type="search" required name="query">
-                    <button>Search</button>
-                </form>
-
-
             </div>
         </div>
     </div>
