@@ -76,10 +76,11 @@ class Frontend extends Controller
 
     public function bycategory($slug){
 
-        $category = Category::where('category_slug', $slug)->select('id')->get();
-        //$data = Post::where('category_id', 2)->get();
-
-        return $category['id'];
+        $category = Category::where('category_slug', $slug)->first();
+        $id = $category->id;
+        $name = $category->category_name;
+        $data = Post::where('category_id', $id)->paginate(10);
+        return view('frontend.blog.category', compact('data', 'name'));
     }
 
 }
