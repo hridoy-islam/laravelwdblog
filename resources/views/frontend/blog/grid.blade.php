@@ -8,15 +8,7 @@
             <div class="col-sm-12 text-center">
                 <h2>Blog Page</h2>
                 <ol class="breadcrumb">
-                    <li>
-                        <a href="./">
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">Blog</a>
-                    </li>
-                    <li class="active">Mosaic</li>
+                    {{ Breadcrumbs::render('blog') }}
                 </ol>
             </div>
         </div>

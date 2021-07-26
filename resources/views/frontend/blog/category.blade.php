@@ -31,54 +31,63 @@
 
                 <div class="isotope_container isotope row masonry-layout columns_bottom_margin_30"
                     style="position: relative; height: 2474px;">
-                    @foreach ($data as $row)
 
+@forelse ($data as $row)
 
-                    <div class="isotope-item col-lg-4 col-md-6 col-sm-12"
-                        style="position: absolute; left: 0%; top: 0px;">
+<div class="isotope-item col-lg-4 col-md-6 col-sm-12"
+    style="position: absolute; left: 0%; top: 0px;">
 
-                        <article
-                            class="vertical-item content-padding mosaic-post post format-standard text-center with_border">
+    <article
+        class="vertical-item content-padding mosaic-post post format-standard text-center with_border">
 
-                            <div class="item-media entry-thumbnail">
-                                <img src="{{$row->thumbnail}}" alt="">
-                                <div class="media-links">
-                                    <a class="abs-link" title="" href=""></a>
-                                </div>
-                            </div>
+        <div class="item-media entry-thumbnail">
+            <img src="{{$row->thumbnail}}" alt="">
+            <div class="media-links">
+                <a class="abs-link" title="" href=""></a>
+            </div>
+        </div>
 
-                            <div class="item-content entry-content">
-                                <header class="entry-header">
+        <div class="item-content entry-content">
+            <header class="entry-header">
 
-                                    <h3 class="entry-title">
-                                        <a href="{{route('singlepost', $row->slug)}}" rel="bookmark">{{$row->title}}</a>
+                <h3 class="entry-title">
+                    <a href="{{route('singlepost', $row->slug)}}" rel="bookmark">{{$row->title}}</a>
 
-                                    </h3>
+                </h3>
 
-                                    <span class="date main_bg_color">
-                                        <time datetime="2017-01-10T15:05:23+00:00" class="entry-date">
-                                            {{$row->created_at->format('M d Y')}}
-                                        </time>
-                                    </span>
+                <span class="date main_bg_color">
+                    <time datetime="2017-01-10T15:05:23+00:00" class="entry-date">
+                        {{$row->created_at->format('M d Y')}}
+                    </time>
+                </span>
 
-                                </header>
-                                <!-- .entry-header -->
+            </header>
+            <!-- .entry-header -->
 
-                                <p>{{$row->description}}</p>
+            <p>{{$row->description}}</p>
 
-                            </div>
-                            <!-- .item-content.entry-content -->
-                            <div class="post-social-links text-center">
-                                <a href="#" class="social-icon color-icon soc-twitter"></a>
-                                <a href="#" class="social-icon color-icon soc-facebook"></a>
-                                <a href="#" class="social-icon color-icon soc-google"></a>
-                                <a href="#" class="social-icon color-icon soc-flickr"></a>
-                            </div>
-                        </article>
+        </div>
+        <!-- .item-content.entry-content -->
+        <div class="post-social-links text-center">
+            <a href="#" class="social-icon color-icon soc-twitter"></a>
+            <a href="#" class="social-icon color-icon soc-facebook"></a>
+            <a href="#" class="social-icon color-icon soc-google"></a>
+            <a href="#" class="social-icon color-icon soc-flickr"></a>
+        </div>
+    </article>
 
-                    </div>
+</div>
 
-                    @endforeach
+@empty
+<div class="isotope-item col-lg-4 col-md-6 col-sm-12"
+style="position: absolute; left: 0%; top: 0px;">
+
+    <h1>Nothing Found</h1>
+
+</div>
+
+@endforelse
+
 
                 </div>
 

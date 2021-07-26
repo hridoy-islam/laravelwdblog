@@ -7,6 +7,7 @@
         <div class="row">
             <div class="col-sm-12 text-center">
                 <h2>{{ $data->title }}</h2>
+
             </div>
         </div>
     </div>
