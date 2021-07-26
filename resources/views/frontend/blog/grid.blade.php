@@ -1,5 +1,4 @@
 @extends('frontend.common.layout')
-@section('title', 'Blog');
 
 @section('content')
 

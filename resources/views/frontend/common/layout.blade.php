@@ -7,15 +7,8 @@
 <!--<![endif]-->
 
 <head>
-	<title>@yield('title')</title>
-	<meta charset="utf-8">
-	<!--[if IE]>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<![endif]-->
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    {!! SEO::generate() !!}
 
 	<link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
 	<link rel="stylesheet" href="{{asset('css/animations.css')}}">
