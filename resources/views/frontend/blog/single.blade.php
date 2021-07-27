@@ -8,6 +8,8 @@
             <div class="col-sm-12 text-center">
                 <h2>{{ $data->title }}</h2>
 
+                {{ Breadcrumbs::render('singleblog', $data->title)}}
+
             </div>
         </div>
     </div>

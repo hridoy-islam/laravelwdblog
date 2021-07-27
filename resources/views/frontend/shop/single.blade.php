@@ -6,16 +6,9 @@
         <div class="row">
             <div class="col-sm-12 text-center">
                 <h2>{{$data->name}}</h2>
+
                 <ol class="breadcrumb">
-                    <li>
-                        <a href="./">
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">Gallery</a>
-                    </li>
-                    <li class="active">Gallery Regular 2 columns</li>
+                    {{ Breadcrumbs::render('singleproduct', $data->name) }}
                 </ol>
             </div>
         </div>

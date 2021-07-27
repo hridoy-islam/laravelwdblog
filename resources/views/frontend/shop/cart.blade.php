@@ -8,15 +8,7 @@
             <div class="col-sm-12 text-center">
                 <h2>Cart</h2>
                 <ol class="breadcrumb">
-                    <li>
-                        <a href="./">
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">Gallery</a>
-                    </li>
-                    <li class="active">Gallery Right Sidebar 2 columns</li>
+                    {{Breadcrumbs::render('cart')}}
                 </ol>
             </div>
         </div>

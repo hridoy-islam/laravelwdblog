@@ -9,15 +9,7 @@
             <div class="col-sm-12 text-center">
                 <h2>About</h2>
                 <ol class="breadcrumb">
-                    <li>
-                        <a href="./">
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">Pages</a>
-                    </li>
-                    <li class="active">About</li>
+                   {{Breadcrumbs::render('about')}}
                 </ol>
             </div>
         </div>

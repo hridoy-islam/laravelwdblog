@@ -8,15 +8,7 @@
             <div class="col-sm-12 text-center">
                 <h2>Contact 2</h2>
                 <ol class="breadcrumb">
-                    <li>
-                        <a href="./">
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">Pages</a>
-                    </li>
-                    <li class="active">Contact 2</li>
+                    {{ Breadcrumbs::render('contact')}}
                 </ol>
             </div>
         </div>
