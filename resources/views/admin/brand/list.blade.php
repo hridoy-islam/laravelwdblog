@@ -12,6 +12,8 @@
           <div class="card">
             <div class="card-header">
               <h3 class="card-title">Brands List</h3>
+              <br>
+              <a href="{{route('export.brands')}}" class="btn btn-primary" >Export Brand List</a>
             </div>
             <!-- /.card-header -->
             <div class="card-body">

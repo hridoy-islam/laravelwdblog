@@ -10,4 +10,5 @@ class DashboardController extends Controller
         notify()->success('Welcome to Admin Panel');
         return view('admin.pages.index');
     }
+
 }

@@ -32,7 +32,7 @@
                                 <div class="media-links">
                                     <div class="links-wrap">
                                         <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]"
-                                            href="images/gallery/01.jpg"></a>
+                                            href="{{$data->thumbnail}}"></a>
                                         <a class="p-link" title="" href="gallery-single.html"></a>
                                     </div>
                                 </div>
@@ -51,13 +51,17 @@
 <p><b>Brand</b>: {{$data->brand->name}}</p>
 <h3><b>Price</b> : ${{$data->price}}</h3>
 
-                            <h4>Quantity :
-                                <input class="form-control" type="number" value="1">
 
-                            </h4>
 
-                            <button class="btn btn-primary">Buy Now</button>
-                            <button class="btn btn-info">Add To Cart</button>
+<form action="{{route('addtocart')}}" method="post">
+    @csrf
+    <h4>Quantity : </h4>
+    <input class="form-control" type="number" name="quantity" value="1">
+    <input type="hidden" name="product_id" value="{{$data->id}}">
+    <input type="hidden" name="product_price" value="{{$data->price}}">
+    <button class="btn btn-info">Add To Cart</button>
+</form>
+
 
                             <p> Stock Available Now : {{$data->stock}} </p>
 

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\BrandsExport;
 use Illuminate\Http\Request;
 use App\Models\Brand;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BrandController extends Controller
 {
@@ -90,5 +92,9 @@ class BrandController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function export(){
+        return Excel::download(new BrandsExport, 'brand.csv');
     }
 }
